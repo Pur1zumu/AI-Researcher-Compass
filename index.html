@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI研究者科研人格测评 | AI Researcher Personality Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Introduction Section -->
+    <div id="intro-section" class="section active">
+        <div class="container">
+            <header class="intro-header">
+                <h1 class="main-title">AI研究者科研人格测评</h1>
+                <h2 class="sub-title">AI Researcher Personality Assessment</h2>
+                <p class="intro-description">
+                    这是一份用于定位AI研究者"科研人设"的趣味测评，旨在帮助你进行自我探索、促进团队成员"破冰"和相互理解。
+                    通过四个近似正交的维度，发现你独一无二的科研人格画像。
+                </p>
+            </header>
+            
+            <div class="dimensions-preview">
+                <h3>测评维度 Assessment Dimensions</h3>
+                <div class="dimension-cards">
+                    <div class="dimension-card">
+                        <div class="dimension-icon">🔭</div>
+                        <h4>科研坐标</h4>
+                        <p>Research Horizon</p>
+                        <span>仰望星空 ↔ 脚踏实地</span>
+                    </div>
+                    <div class="dimension-card">
+                        <div class="dimension-icon">🧠</div>
+                        <h4>认知范式</h4>
+                        <p>Cognitive Paradigm</p>
+                        <span>理论为王 ↔ 实践出真知</span>
+                    </div>
+                    <div class="dimension-card">
+                        <div class="dimension-icon">⚡</div>
+                        <h4>增长杠杆</h4>
+                        <p>Growth Lever</p>
+                        <span>模型至上 ↔ 数据为王</span>
+                    </div>
+                    <div class="dimension-card">
+                        <div class="dimension-icon">🚀</div>
+                        <h4>创新策略</h4>
+                        <p>Innovation Strategy</p>
+                        <span>暴力颠覆 ↔ 精益求精</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="start-section">
+                <p class="question-count">共40道题目，预计用时5-8分钟</p>
+                <button id="start-btn" class="primary-btn">开始测评</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assessment Section -->
+    <div id="assessment-section" class="section">
+        <div class="container">
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <div class="question-counter">
+                <span id="current-question">1</span> / <span id="total-questions">40</span>
+            </div>
+            
+            <div id="question-container" class="question-container">
+                <!-- Questions will be dynamically generated -->
+            </div>
+            
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="secondary-btn" disabled>上一题</button>
+                <button id="next-btn" class="primary-btn" disabled>下一题</button>
+                <button id="finish-btn" class="primary-btn" style="display: none;">查看结果</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results-section" class="section">
+        <div class="container">
+            <div class="result-card">
+                <div class="result-header">
+                    <h2 id="personality-type" class="personality-type"></h2>
+                    <h3 id="personality-title" class="personality-title"></h3>
+                </div>
+                
+                <div class="result-content">
+                    <div class="personality-description">
+                        <h4>人设描述</h4>
+                        <p id="personality-desc"></p>
+                    </div>
+                    
+                    <div class="personality-powers">
+                        <h4>超能力</h4>
+                        <p id="personality-strengths"></p>
+                    </div>
+                    
+                    <div class="personality-weaknesses">
+                        <h4>需充值</h4>
+                        <p id="personality-needs"></p>
+                    </div>
+                    
+                    <div class="personality-complement">
+                        <h4>互补建议</h4>
+                        <p id="personality-advice"></p>
+                    </div>
+                </div>
+                
+                <div class="dimensions-visualization">
+                    <h4>维度得分可视化</h4>
+                    <div id="dimension-chart" class="dimension-chart"></div>
+                </div>
+                
+                <div class="result-actions">
+                    <button id="restart-btn" class="secondary-btn">重新测评</button>
+                    <button id="share-btn" class="primary-btn">保存结果卡片</button>
+                </div>
+                
+                <!-- QR Code placeholder -->
+                <div class="qr-placeholder">
+                    <div class="qr-code">QR</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
