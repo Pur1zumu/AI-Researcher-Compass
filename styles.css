@@ -574,8 +574,8 @@ body {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 }
 
 /* Ensure result card looks good when captured */
@@ -584,50 +584,19 @@ body {
     max-width: none;
 }
 
-/* Optimize for screenshot capture */
-.result-card.capturing {
-    animation: none !important;
-    transition: none !important;
-    backdrop-filter: none !important;
-    background: rgba(255, 255, 255, 0.98) !important;
-    margin: 20px !important;
-}
-
-.result-card.capturing * {
-    animation: none !important;
-    transition: none !important;
-}
-
-.result-card.capturing .axis-fill,
-.result-card.capturing .axis-marker {
-    opacity: 1 !important;
-    animation: none !important;
-}
-
-/* Hide scrollbars during screenshot */
-@media print {
-    .result-card {
-        overflow: hidden;
-    }
-}
 
 .qr-code {
     width: 100%;
     height: 100%;
-    background: #ecf0f1;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    color: #7f8c8d;
-    border: 2px dashed #bdc3c7;
+    object-fit: contain;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .result-actions {
     display: flex;
     justify-content: center;
-    gap: 20px;
 }
 
 /* Mobile Responsiveness */
@@ -702,7 +671,8 @@ body {
     }
     
     .label-group {
-        max-width: 80px;
+        max-width: 100px;
+        flex: 0 0 100px;
     }
     
     .label-text {
@@ -732,14 +702,15 @@ body {
     }
     
     .result-actions {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
     }
     
     .qr-placeholder {
         bottom: 15px;
         right: 15px;
-        width: 50px;
-        height: 50px;
+        width: 65px;
+        height: 65px;
     }
 }
 
@@ -762,7 +733,8 @@ body {
     }
     
     .label-group {
-        max-width: 60px;
+        max-width: 90px;
+        flex: 0 0 90px;
     }
     
     .label-text {
@@ -789,11 +761,14 @@ body {
         font-size: 0.9rem;
         padding: 2px 4px;
         min-width: 40px;
+        flex: 0 0 auto;
     }
     
     .axis-info {
-        flex-direction: column;
-        gap: 8px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 5px;
     }
     
     .dimension-title {
